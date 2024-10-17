@@ -37,6 +37,8 @@ Objective: Utilizes the Abstract Syntax Tree to represent and evaluate the rule 
     * AST-Based Rule Engine: Parses the rules into an AST and evaluates the conditions (e.g., age > 18, income > 50000).
     * Storage: Evaluation results and rules are saved in the backend for future use.
     * Admin Management: Administrators can add or update rules, and these changes immediately reflect in the rule evaluation process.
+
+      
 Summary
 This 3-tier architecture combines a simple UI, an API that uses AST-based evaluation, and a data tier to store the rules and results. Users can input their data and see results, while admins have the flexibility to manage rules dynamically.
 
