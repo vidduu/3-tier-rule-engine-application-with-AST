@@ -1,0 +1,46 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rule Engine UI</title>
+</head>
+<body>
+    <h1>Create and Evaluate Rules</h1>
+
+    <form id="ruleForm">
+        <label for="rule">Enter Rule:</label>
+        <input type="text" id="rule" name="rule">
+        <button type="button" onclick="createRule()">Create Rule</button>
+    </form>
+
+    <form id="evaluateForm">
+        <label for="data">Enter Data (JSON):</label>
+        <input type="text" id="data" name="data">
+        <button type="button" onclick="evaluateRule()">Evaluate Rule</button>
+    </form>
+
+    <script>
+        function createRule() {
+            const rule = document.getElementById('rule').value;
+            fetch('/create_rule', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ rule: rule })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data));
+        }
+
+        function evaluateRule() {
+            const data = document.getElementById('data').value;
+            fetch('/evaluate_rule', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ data: JSON.parse(data) })
+            })
+            .then(response => response.json())
+            .then(result => console.log(result));
+        }
+    </script>
+</body>
+</html>
