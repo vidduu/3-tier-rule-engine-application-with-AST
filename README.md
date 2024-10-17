@@ -40,5 +40,6 @@ Objective: Utilizes the Abstract Syntax Tree to represent and evaluate the rule 
 
       
 Summary
+
 This 3-tier architecture combines a simple UI, an API that uses AST-based evaluation, and a data tier to store the rules and results. Users can input their data and see results, while admins have the flexibility to manage rules dynamically.
 
